@@ -30,10 +30,12 @@ void setup(){
   gifExport.setQuality(20);
   gifExport.setDelay(30);
 }
+
 boolean record = false;
+
 void draw(){
     background(0);
-    textParticle.Update(); //<>//
+    textParticle.Update(); 
     
     //saveFrame("Image/X####.png");
    if(record){
@@ -67,7 +69,7 @@ PImage GenerateTextImage(String contexts,float size){
   g.textAlign(CENTER);
   g.background(0);
   g.rectMode(CENTER);
-  g.text(contexts, g.width/2, g.height/2, g.width, textHeight * 1.2 * max(1, newLines)); //<>//
+  g.text(contexts, g.width/2, g.height/2, g.width, textHeight * 1.2 * max(1, newLines));
   g.endDraw();
   return g.get();
 }
@@ -111,7 +113,7 @@ class Particle{
     
     noStroke();
     fill(mCol);
-    ellipse(mCurrent.x,mCurrent.y,mSize + 30 * sin(mDegreeOfProgress * PI) ,mSize + 30 *sin(mDegreeOfProgress * PI)); //<>//
+    ellipse(mCurrent.x,mCurrent.y,mSize + 30 * sin(mDegreeOfProgress * PI) ,mSize + 30 *sin(mDegreeOfProgress * PI)); 
     
    // stroke(mCol);
     //strokeWeight(mSize);
@@ -170,7 +172,6 @@ class TextParticleSystem{
   }
   
   //パーティクルの数を変えない
-  //つまり、パーティクルの数基準
   public void ChangeText(PImage image){
     SetPositions(image);
     if(mPositions.size() > mParticles.size()){
