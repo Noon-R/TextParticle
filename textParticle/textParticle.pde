@@ -38,14 +38,14 @@ void draw(){
     textParticle.Update(); 
     
     //saveFrame("Image/X####.png");
-   if(record){
+    if(record){
      gifExport.addFrame();
-   }
+    }
 }
 int pressed = 0;
 void mousePressed(){
   pressed ++;
-  pressed = pressed%2;
+  pressed = pressed%contexts.length;
   textParticle.ChangeText(Image[pressed]);
 }
 
@@ -104,7 +104,7 @@ class Particle{
     if(mDegreeOfProgress >= 1){
       mDegreeOfProgress = 1;
       count++;
-      if(count >= 2)mCol = color(1,255,255);
+      //if(count >= 2)mCol = color(1,255,255);
     }
     SetCurrentPostion(mDegreeOfProgress);
   }
